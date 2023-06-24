@@ -14,8 +14,8 @@ function reverseString2(str) {
   return str.split("").reverse().join("")
 }
 
-const reverseStr = reverseString("hello");
-console.log("Result:", reverseStr);
+const reverseStr = reverseString("hello")
+console.log("Result:", reverseStr)
 
-const reverseStr2 = reverseString2("world");
-console.log("Result:", reverseStr2);
+const reverseStr2 = reverseString2("world")
+console.log("Result:", reverseStr2)

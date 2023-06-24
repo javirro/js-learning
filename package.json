@@ -1,0 +1,18 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "copyObjects.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prettier": "npx prettier --write .\\challenges"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "2.8.8"
+  },
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
