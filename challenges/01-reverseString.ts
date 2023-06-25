@@ -1,6 +1,6 @@
 // The objective is given a string, reverse that string.
 
-function reverseString(str) {
+function reverseString(str: string) {
   let reverseStr = ""
   for (let i = str.length - 1; i >= 0; i--) {
     reverseStr += str[i]
@@ -10,7 +10,7 @@ function reverseString(str) {
 
 // Spliting a string using nothing as separator permits separate the string character by character. Then, reverse, permit obtain the inverse order of the array.
 // Using join without any space in the quotes permit us to assure that each character is join to the others.
-function reverseString2(str) {
+function reverseString2(str: string) {
   return str.split("").reverse().join("")
 }
 

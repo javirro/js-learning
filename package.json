@@ -5,14 +5,19 @@
   "main": "copyObjects.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "challenge": " tsc && cd dist\\challenges && node",
     "prettier": "npx prettier --write .\\challenges"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/source-map-support": "^0.5.6",
     "prettier": "2.8.8"
   },
   "dependencies": {
-    "jest": "^29.5.0"
+    "jest": "^29.5.0",
+    "source-map-support": "^0.5.21",
+    "typescript": "^5.1.3"
   }
 }

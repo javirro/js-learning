@@ -5,9 +5,9 @@
  * - Con el número 7, nos dirá: "7 es primo, no es fibonacci y es impar"
  */
 
-const inputNumber = [2, 7, 28, 89, 80]
+const inputNumber: number[] = [2, 7, 28, 89, 80]
 
-function calculateFibonacci(number) {
+function calculateFibonacci(number: number) {
   let isInSequence = false
   let index = 2
   let sequence = [0, 1]
@@ -20,7 +20,7 @@ function calculateFibonacci(number) {
   return isInSequence
 }
 
-function isPrimeNumber(number) {
+function isPrimeNumber(number: number) {
   let isPrime = true
   if (number <= 1) return false
   for (let i = 2; i < number - 1; i++) {
@@ -32,11 +32,11 @@ function isPrimeNumber(number) {
   return isPrime
 }
 
-function isEvenNumber(number) {
+function isEvenNumber(number: number) {
   return number % 2 === 0
 }
 
-function getResult(number) {
+function getResult(number: number) {
   const isFibonacci = calculateFibonacci(number)
   const isPrime = isPrimeNumber(number)
   const isEven = isEvenNumber(number)
@@ -49,6 +49,6 @@ try {
   if (inputNumber.length === 0) console.log("There is not number")
   inputNumber.forEach(number => getResult(number))
 
-} catch (error) {
+} catch (error: any) {
   console.log("ERROR:", error.message)
 }

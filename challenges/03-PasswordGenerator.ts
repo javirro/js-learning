@@ -12,7 +12,7 @@ const lowerUpperCases = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const symbols = "*+#!¿=&%¡?"
 
 // Symbol is the last element added. Always will exist
-function helperToFindIfIsAtLeastOne(password, combineUpperLowerCase = false, numberIsIncluded = false) {
+function helperToFindIfIsAtLeastOne(password: string, combineUpperLowerCase = false, numberIsIncluded = false) {
   let isNumber = false
   let isLower = false
   let isUpper = false
@@ -27,7 +27,7 @@ function helperToFindIfIsAtLeastOne(password, combineUpperLowerCase = false, num
   return { isLower, isUpper, isNumber }
 }
 
-function generateRandomString(length, combineUpperLowerCase) {
+function generateRandomString(length: number, combineUpperLowerCase: boolean) {
   let randomString = ""
   const charactersToUse = combineUpperLowerCase ? lowerUpperCases : lowerCasses
   for (let i = 0; i < length; i++) {
@@ -44,7 +44,7 @@ function generateRandomString(length, combineUpperLowerCase) {
   }
 }
 
-function addRandonNumbers(passwordBase, combineUpperLowerCase) {
+function addRandonNumbers(passwordBase: any, combineUpperLowerCase: boolean) {
   let passWordWithNumber = [...passwordBase].join("")
   const numbersToInclude = Math.floor(Math.random() * passWordWithNumber.length)
   for (let i = 0; i < numbersToInclude; i++) {
@@ -65,7 +65,7 @@ function addRandonNumbers(passwordBase, combineUpperLowerCase) {
   return passWordWithNumber
 }
 
-function addSymbol(passwordBase, combineUpperLowerCase, numberIsIncluded) {
+function addSymbol(passwordBase: any, combineUpperLowerCase: boolean, numberIsIncluded: boolean) {
   let passwrodWithSymbol = [...passwordBase].join("")
   const numberOfSymbolsToInclude = Math.floor(Math.random() * passwrodWithSymbol.length)
   for (let i = 0; i < numberOfSymbolsToInclude; i++) {
@@ -91,11 +91,11 @@ function addSymbol(passwordBase, combineUpperLowerCase, numberIsIncluded) {
   return passwrodWithSymbol
 }
 
-function generatePassword(length, combineUpperLowerCase = false, numberIsIncluded = false, symbolIscluded = false) {
+function generatePassword(length: number, combineUpperLowerCase = false, numberIsIncluded = false, symbolIscluded = false) {
   if (length < 8 || length > 16) throw new Error("Imposible to create a password with length lower than 8 or higher than 16")
   let passwordBase = generateRandomString(length, combineUpperLowerCase)
-  const passwordAfterNumber = !numberIsIncluded ? [...passwordBase].join("") : addRandonNumbers(passwordBase, combineUpperLowerCase)
-  const password = !symbolIscluded ? [...passwordAfterNumber].join("") : addSymbol(passwordAfterNumber, combineUpperLowerCase, numberIsIncluded)
+  const passwordAfterNumber = !numberIsIncluded ? passwordBase : addRandonNumbers(passwordBase, combineUpperLowerCase)
+  const password = !symbolIscluded ? passwordAfterNumber : addSymbol(passwordAfterNumber, combineUpperLowerCase, numberIsIncluded)
   return password
 }
 
@@ -106,7 +106,7 @@ try {
     const password = generatePassword(12, true, true, true)
     console.log(password)
   }
-} catch (error) {
+} catch (error: any) {
   console.error("Error: ", error.message)
   const password = generatePassword(12, true, true, true)
   console.log(password)
